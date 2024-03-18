@@ -78,4 +78,4 @@ const loginApi = (req, res) => {
     })
 }
 
-module.exports = {hiApi, loginApi};
+module.exports = {hiApi, loginApi, signupApi};
