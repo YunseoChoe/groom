@@ -90,6 +90,3 @@ const testApi = (req, res) => {
 };
 
 module.exports = {hiApi, loginApi, signupApi, testApi};
-=======
-module.exports = {hiApi, loginApi, signupApi};
->>>>>>> 08ef636dc6dda539d9b462955ba317225a0accb8
