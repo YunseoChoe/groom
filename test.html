@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Test</title>
+</head>
+<body>
+    <h1>API Test</h1>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+    <button id="submitButton">Submit</button>
+    <p id="responseMessage"></p>
+
+    <script>
+        document.getElementById('submitButton').addEventListener('click', async () => {
+            const name = document.getElementById('name').value;
+            const response = await fetch('http://34.47.77.167:8000/test', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ name: name }),
+            });
+
+            const responseData = await response.json();
+
+            if (response.ok) {
+                document.getElementById('responseMessage').textContent = responseData.message;
+            } else {
+                document.getElementById('responseMessage').textContent = responseData.error;
+            }
+        });
+    </script>
+</body>
+</html>
