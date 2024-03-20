@@ -78,4 +78,18 @@ const loginApi = (req, res) => {
     })
 }
 
+// testAPI
+const testApi = (req, res) => {
+    const name = req.body.name;
+    if (!name) {
+        res.status(400).json({ error: 'Name is required' });
+    } else {
+        const message = `${name}님, hello!`;
+        res.json({ message: message });
+    }
+};
+
+module.exports = {hiApi, loginApi, signupApi, testApi};
+=======
 module.exports = {hiApi, loginApi, signupApi};
+>>>>>>> 08ef636dc6dda539d9b462955ba317225a0accb8
